@@ -1,12 +1,20 @@
 <template>
-  <div>
-    Browse page
-  </div>
+  <section>
+    <Header/>
+    <div>
+      Posts
+    </div>
+  </section>
 </template>
 
 <script>
+
+import Header from "./Header";
 export default {
-  name: "Browse"
+  name: "Posts",
+  components: {
+    Header
+  }
 }
 </script>
 

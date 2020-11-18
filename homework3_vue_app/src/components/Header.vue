@@ -3,7 +3,7 @@
     <header>
       <nav>
         <div class="logo-container">
-          <img src="res/images/logo.png" alt="postIt">
+          <img src="../assets/logo.png" alt="postIt">
         </div>
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
@@ -15,11 +15,15 @@
             <span id="user-email"></span>
             <span class="separator"></span>
             <span>
-              <a href="browse.html">Browse</a>
+              <router-link to="/users">
+                <a>Browse</a>
+              </router-link>
             </span>
             <span class="separator"></span>
             <span>
-              <a href="login.html">Log Out</a>
+              <router-link to="/login">
+                <a>Log Out</a>
+              </router-link>
             </span>
           </div>
         </div>

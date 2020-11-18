@@ -1,12 +1,21 @@
 <template>
-  <div>
-    Browse users
-  </div>
+  <section>
+    <Header/>
+    <div>
+      Browse users
+    </div>
+  </section>
 </template>
 
 <script>
+
+import Header from "./Header";
+
 export default {
-name: "BrowseUsers"
+  name: "BrowseUsers",
+  components: {
+    Header
+  }
 }
 </script>
 
