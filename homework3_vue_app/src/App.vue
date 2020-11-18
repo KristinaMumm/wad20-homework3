@@ -9,14 +9,16 @@
 
 export default {
   name: 'App',
+  computed: {
+  },
   components: {
   }
 }
 </script>
 
 <style>
-#app
-  * {
+#app,
+* {
     font-family: 'Roboto Slab', serif;
     outline: none;
   }
