@@ -76,6 +76,7 @@ nav div img {
   object-position: top center;
 }
 
+
 nav div.search-container > input {
   box-sizing: border-box;
   height: 30px;
@@ -92,6 +93,11 @@ nav div.search-container > button {
   padding: 5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+nav div.avatar-container {
+  margin-right: 15px;
+  text-align: right;
 }
 
 .drop-down-container {
