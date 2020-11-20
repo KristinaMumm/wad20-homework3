@@ -2,7 +2,13 @@
   <section>
     <Header/>
     <div>
-      Browse users
+      <div v-for='profile in profiles' :key='profile.id'>
+        <div class="profile">
+          <h2>{{profile.firstname}}  {{profile.lastname}}</h2>
+          <img :src="profile.avatar" :alt="profile.firstname + ' ' +  profile.lastname">
+          <button class="follow-button">Follow</button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -15,7 +21,15 @@ export default {
   name: "BrowseUsers",
   components: {
     Header
-  }
+  },
+  computed: {
+    profiles() {
+      return this.$store.getters.allProfiles
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getProfiles");
+  },
 }
 </script>
 
