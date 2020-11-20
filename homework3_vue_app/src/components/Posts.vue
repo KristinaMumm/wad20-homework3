@@ -38,11 +38,6 @@
 import Header from "./Header";
 export default {
   name: "Posts",
-  data () {
-    return {
-      msg: "Let's try, my friends"
-    }
-  },
   computed: {
     posts() {
       return this.$store.getters.allPosts

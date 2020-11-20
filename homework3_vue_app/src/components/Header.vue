@@ -9,10 +9,10 @@
           <input type="text" name="search"><button type="button">Search</button>
         </div>
         <div class="avatar-container">
-          <img class="avatar">
+          <img :src="user.avatar" class="avatar" >
           <div class="drop-down-container">
-            <span id="user-name">John Doe</span>
-            <span id="user-email"></span>
+            <span id="user-name">{{user.firstname}} {{user.lastname}}</span>
+            <span id="user-email">{{user.email}}</span>
             <span class="separator"></span>
             <span>
               <router-link to="/users">
@@ -35,9 +35,14 @@
 <script>
 export default {
   name: 'Header',
-  props: {
-
-  }
+  computed: {
+    user() {
+      return this.$store.getters.thisUser
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getUser");
+  },
 }
 </script>
 

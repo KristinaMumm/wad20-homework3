@@ -8,12 +8,14 @@ Vue.use(Vuex);
 export default  new Vuex.Store( {
 //to handle state
 state: {
-    posts: []
+    posts: [],
+    user: [],
 },
 
 //to handle state
 getters: {
-    allPosts: (state) => state.posts
+    allPosts: (state) => state.posts,
+    thisUser: (state) => state.user,
 },
 
 //to handle actions
@@ -23,13 +25,22 @@ actions: {
             .then(response => {
                 commit('SET_POSTS', response.data)
             })
-    }
+    },
+    getUser({ commit }) {
+        axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')
+            .then(response => {
+                commit('SET_USER', response.data)
+            })
+    },
 },
 
 mutations: {
     SET_POSTS(state, posts) {
         state.posts = posts
-    }
+    },
+    SET_USER(state, user) {
+        state.user = user
+    },
 }
 })
 //export store module
