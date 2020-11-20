@@ -1,7 +1,7 @@
 <template>
   <section>
     <Header/>
-    <div>
+    <div class="main-container">
       <div v-for='profile in profiles' :key='profile.id'>
         <div class="profile">
           <h2>{{profile.firstname}}  {{profile.lastname}}</h2>
