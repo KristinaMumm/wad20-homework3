@@ -4,7 +4,7 @@
     <div class="main-container">
       <div v-for='profile in profiles' :key='profile.id'>
         <div class="profile">
-          <h2>{{ profile.firstname }} {{ profile.lastname }}</h2>
+          <h2>{{ profile.firstname | capitalize }} {{ profile.lastname | capitalize }}</h2>
           <img :src="profile.avatar" :alt="profile.firstname + ' ' +  profile.lastname">
           <button id="follow" class="follow-button" @click="toggleFollow($event.target)">Follow</button>
         </div>
@@ -36,6 +36,17 @@ export default {
       followButton.classList.toggle("follow-button-followed");
 
     }
+  },
+  filters: {
+
+    capitalize: function (value) {
+
+      if (!value) return;
+
+      return value.toString().toUpperCase();
+
+    }
+
   }
 }
 </script>
