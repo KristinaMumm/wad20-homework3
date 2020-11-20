@@ -6,13 +6,14 @@
           <img src="../assets/logo.png" alt="postIt">
         </div>
         <div class="search-container">
-          <input type="text" name="search"><button type="button">Search</button>
+          <input type="text" name="search">
+          <button type="button">Search</button>
         </div>
         <div class="avatar-container">
-          <img :src="user.avatar" class="avatar" >
-          <div class="drop-down-container">
-            <span id="user-name">{{user.firstname}} {{user.lastname}}</span>
-            <span id="user-email">{{user.email}}</span>
+          <img :src="user.avatar" class="avatar" @click="openMenu">
+          <div id="profile-dropdown" class="drop-down-container">
+            <span id="user-name">{{ user.firstname }} {{ user.lastname }}</span>
+            <span id="user-email">{{ user.email }}</span>
             <span class="separator"></span>
             <span>
               <router-link to="/users">
@@ -43,6 +44,15 @@ export default {
   mounted() {
     this.$store.dispatch("getUser");
   },
+  methods: {
+    openMenu: function () {
+
+      var dropDown = document.getElementById("profile-dropdown");
+      if (dropDown.style.display === "none") dropDown.style.display = "block";
+      else dropDown.style.display = "none";
+
+    }
+  }
 }
 </script>
 
@@ -116,10 +126,12 @@ nav div.avatar-container {
   text-align: left;
   display: none;
 }
-.drop-down-container span{
+
+.drop-down-container span {
   display: block;
 }
-.drop-down-container span.separator{
+
+.drop-down-container span.separator {
   border-bottom: 1px solid #d7d7d7;
   margin: 10px -10px;
 }

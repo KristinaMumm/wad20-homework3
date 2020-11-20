@@ -10,15 +10,15 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/login', name: 'login', component: LogIn},
-  {path: '/posts', name: 'posts', component: Posts},
-  {path: '/users', name: 'users', component: BrowseUsers}
+    {path: '/login', name: 'login', component: LogIn},
+    {path: '/posts', name: 'posts', component: Posts},
+    {path: '/users', name: 'users', component: BrowseUsers}
 ];
 
 const router = new VueRouter({routes});
 
 new Vue({
-  router,
-  store,
-  render: h => h(App),
+    router,
+    store,
+    render: h => h(App),
 }).$mount('#app')

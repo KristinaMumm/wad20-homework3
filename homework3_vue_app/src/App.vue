@@ -9,35 +9,33 @@
 
 export default {
   name: 'App',
-  computed: {
-  },
-  components: {
-  }
+  computed: {},
+  components: {}
 }
 </script>
 
 <style>
 #app,
 * {
-    font-family: 'Roboto Slab', serif;
-    outline: none;
-  }
+  font-family: 'Roboto Slab', serif;
+  outline: none;
+}
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  body {
-    background-color: #0277bd;
-    color: #263238;
-  }
+body {
+  background-color: #0277bd;
+  color: #263238;
+}
 
-  a {
-    color: #40c4ff;
-  }
+a {
+  color: #40c4ff;
+}
 
 button {
   padding: 8px 16px;
@@ -69,7 +67,8 @@ button:hover {
   text-align: center;
   margin: 1%;
 }
-.profile img{
+
+.profile img {
   width: 75px;
   height: 75px;
   border-radius: 100%;
@@ -78,15 +77,15 @@ button:hover {
   margin: 5px;
 }
 
-.profile h2{
+.profile h2 {
   font-size: 16px;
 }
 
-.follow-button{
+.follow-button {
   background-color: #82008f;
 }
 
-.follow-button.followed{
+.follow-button.followed {
   background-color: #ffffff;
   border: 1px solid #82008f;
   color: #82008f;
