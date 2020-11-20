@@ -6,7 +6,7 @@
         <div class="profile">
           <h2>{{ profile.firstname }} {{ profile.lastname }}</h2>
           <img :src="profile.avatar" :alt="profile.firstname + ' ' +  profile.lastname">
-          <button class="follow-button">Follow</button>
+          <button id="follow" class="follow-button" @click="toggleFollow($event.target)">Follow</button>
         </div>
       </div>
     </div>
@@ -30,10 +30,26 @@ export default {
   mounted() {
     this.$store.dispatch("getProfiles");
   },
+  methods: {
+    toggleFollow: function (followButton) {
+
+      followButton.classList.toggle("follow-button-followed");
+
+    }
+  }
 }
 </script>
 
 <style scoped>
 
+.follow-button{
+  background-color: #82008f;
+}
+
+.follow-button-followed{
+  background-color: #ffffff;
+  border: 1px solid #82008f;
+  color: #82008f;
+}
 
 </style>

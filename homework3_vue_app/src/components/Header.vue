@@ -11,7 +11,7 @@
         </div>
         <div class="avatar-container">
           <img :src="user.avatar" class="avatar" @click="openMenu">
-          <div id="profile-dropdown" class="drop-down-container">
+          <div id="profile-dropdown" class="drop-down-container" ref="dropDown">
             <span id="user-name">{{ user.firstname }} {{ user.lastname }}</span>
             <span id="user-email">{{ user.email }}</span>
             <span class="separator"></span>
@@ -47,7 +47,7 @@ export default {
   methods: {
     openMenu: function () {
 
-      var dropDown = document.getElementById("profile-dropdown");
+      let dropDown = this.$refs.dropDown
       if (dropDown.style.display === "none") dropDown.style.display = "block";
       else dropDown.style.display = "none";
 
