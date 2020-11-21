@@ -1,15 +1,13 @@
 <template>
   <section>
     <Header/>
-    <div class="main-container">
-      <div v-for='profile in profiles' :key='profile.id'>
-        <div class="profile">
+    <section class="main-container">
+      <div class="profile" v-for='profile in profiles' :key='profile.id'>
           <img :src="profile.avatar" :alt="profile.firstname + ' ' +  profile.lastname">
           <h2>{{ profile.firstname | capitalize }} {{ profile.lastname | capitalize }}</h2>
           <button id="follow" class="follow-button" @click="toggleFollow($event.target)">Follow</button>
-        </div>
       </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -63,8 +61,6 @@ export default {
   margin: auto auto;
   padding: 90px 15px 15px 15px;
   background-color: #ffffff;
-  column-count: 2;
-  justify-content: center;
 }
 
 .profile {
@@ -75,6 +71,7 @@ export default {
   text-align: center;
   margin: 1%;
 }
+
 .profile img{
   width: 75px;
   height: 75px;
@@ -97,5 +94,6 @@ export default {
   border: 1px solid #82008f;
   color: #82008f;
 }
+
 
 </style>
