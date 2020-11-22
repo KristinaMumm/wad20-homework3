@@ -25,7 +25,7 @@
             <h3>{{ post.text }}</h3>
           </div>
           <div class="post-actions">
-            <button type="button" class="like-button">{{ post.likes }}</button>
+            <button type="button" class="like-button" @click="toggleLike($event.target)">{{ post.likes }}</button>
           </div>
         </div>
       </div>
@@ -49,6 +49,11 @@ export default {
   },
   components: {
     Header
+  },
+  methods: {
+    toggleLike: function(likeButton){
+      likeButton.classList.toggle("like-button-liked");
+    }
   }
 }
 </script>
@@ -141,7 +146,7 @@ export default {
   border: none;
 }
 
-.like-button.liked {
+.like-button-liked {
   background-color: #01579b;
 }
 
